@@ -1,0 +1,9 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+  @for (image of imageList(); track imageList.length; let i = $index) {
+
+    <gif [url]="image"/>
+
+  }
+
+</div>
