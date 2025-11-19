@@ -8,5 +8,5 @@ import { Component, input } from '@angular/core';
   templateUrl: './gif.component.html',
 })
 export class Gif {
-  url = input<String>();
+  url = input<string>();
 }
