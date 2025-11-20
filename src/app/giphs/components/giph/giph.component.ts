@@ -3,10 +3,10 @@ import { Component, input } from '@angular/core';
 
 
 @Component({
-  selector: 'gif',
+  selector: 'giph',
   imports: [],
-  templateUrl: './gif.component.html',
+  templateUrl: './giph.component.html',
 })
-export class GifComponent {
+export class GiphComponent {
   url = input<string>();
 }
