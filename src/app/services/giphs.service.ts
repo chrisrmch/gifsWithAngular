@@ -3,8 +3,8 @@ import { computed, inject, Injectable, signal } from '@angular/core';
 import { environment } from '@environments/environment';
 import type { GiphyResponse } from '../giphs/interfaces/giphy.interfaces';
 import { Giph } from '../giphs/interfaces/giph.interface';
-import { GiphMapper } from '../giphs/mapper/gif.mapper';
-import { map, tap } from 'rxjs';
+import { GiphMapper } from '../giphs/mapper/giph.mapper';
+import { map, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class GiphsService {
   });
 
   searchHistoryKeys = computed(() => {
-    return Object.keys(this.searchHistory)
+    return Object.keys(this.searchHistory())
   })
 
   constructor() {
@@ -48,7 +48,7 @@ export class GiphsService {
     );
   }
 
-  searchGifs(query: string) {
+  searchGifs(query: string) : Observable<Giph[]> {
     return this.http
       .get<GiphyResponse>(`${environment.api_url}/gifs/search`, {
         params: {
@@ -72,4 +72,7 @@ export class GiphsService {
         }))
   }
 
+  getHistoryGifs(query: string) : Giph[] {
+    return this.searchHistory()[query] ?? [];
+  }
 }

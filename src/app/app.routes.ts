@@ -10,13 +10,23 @@ export const routes: Routes = [
 
       {
         path: 'trending',
-        loadComponent: ()=> import('./giphs/pages/trending-page/trending.component'),
+        loadComponent: () => import('./giphs/pages/trending-page/trending.component'),
       },
 
       {
         path: 'search',
         loadComponent: () => import('./giphs/pages/search-page/search.component'),
       },
+
+      {
+        path: 'history/:query',
+        loadComponent: () => import('./giphs/pages/giph-history-page/giph-history.component'),
+      },
+
+      {
+        path: '**',
+        redirectTo: 'trending',
+      }
     ],
   },
 
@@ -24,4 +34,4 @@ export const routes: Routes = [
     path: '**',
     redirectTo: 'dashboard',
   }
- ];
+];

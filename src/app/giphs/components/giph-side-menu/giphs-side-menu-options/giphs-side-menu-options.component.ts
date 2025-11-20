@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { GiphsService } from '../../../../services/giphs.service';
 
 interface menuOption {
   icon: string;
@@ -30,5 +31,11 @@ export class GiphsSideMenuOptions {
       router: '/dashboard/search',
     }
   ];
+
+  service = inject(GiphsService)
+
+  getHistoryKeys() {
+    return this.service.searchHistoryKeys()
+  }
 
 }
