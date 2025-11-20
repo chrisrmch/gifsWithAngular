@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GifsSideMenu } from "../../components/gifs-side-menu/gifs-side-menu.component";
+import { GifsSideMenu } from "../../components/giph-side-menu/giphs-side-menu.component";
 
 @Component({
   selector: 'selector-name',

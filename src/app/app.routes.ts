@@ -4,18 +4,18 @@ export const routes: Routes = [
 
   {
     path: 'dashboard',
-    loadComponent: () => import('./gifs/pages/dashboard-page/dashboard-page.component'),
+    loadComponent: () => import('./giphs/pages/dashboard-page/dashboard-page.component'),
     children: [
 
 
       {
         path: 'trending',
-        loadComponent: ()=> import('./gifs/pages/trending-page/trending.component'),
+        loadComponent: ()=> import('./giphs/pages/trending-page/trending.component'),
       },
 
       {
         path: 'search',
-        loadComponent: () => import('./gifs/pages/search-page/search.component'),
+        loadComponent: () => import('./giphs/pages/search-page/search.component'),
       },
     ],
   },

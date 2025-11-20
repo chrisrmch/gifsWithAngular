@@ -7,6 +7,6 @@ import { Component, input } from '@angular/core';
   imports: [],
   templateUrl: './gif.component.html',
 })
-export class Gif {
+export class GifComponent {
   url = input<string>();
 }

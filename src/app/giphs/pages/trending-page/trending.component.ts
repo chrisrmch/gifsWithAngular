@@ -1,5 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
-import { GifsListComponent } from "../../components/gifs-list.component/gifs-list.component";
+import { GiphsListComponent } from "../../components/giph-list.component/giph-list.component";
 import { GiphsService } from 'src/app/services/giphs.service';
 
 
@@ -21,7 +21,7 @@ import { GiphsService } from 'src/app/services/giphs.service';
 
 @Component({
   templateUrl: './trending.component.html',
-  imports: [GifsListComponent],
+  imports: [GiphsListComponent],
 })
 export default class Trending {
 
